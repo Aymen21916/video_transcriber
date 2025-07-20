@@ -1,2 +1,5 @@
 git+https://github.com/openai/whisper.git
 ffmpeg-python
+python-dotenv
+google-generativeai
+streamlit
