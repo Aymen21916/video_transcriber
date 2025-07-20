@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from app.extractor import extract_audio
 from app.transcriber import transcribe_audio
@@ -10,6 +11,7 @@ uploaded_video = st.file_uploader("Upload a video file", type=["mp4", "mov", "mk
 
 if uploaded_video is not None:
     # Save the uploaded video temporarily
+    os.makedirs("videos", exist_ok=True)
     video_path = f"videos/{uploaded_video.name}"
     with open(video_path, "wb") as f:
         f.write(uploaded_video.getbuffer())
