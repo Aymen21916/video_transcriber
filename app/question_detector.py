@@ -3,7 +3,9 @@ from dotenv import load_dotenv
 from google import genai
 
 load_dotenv()
-client = genai
+client = genai.Client(
+    api_key=os.getenv("GOOGLE_API_KEY")
+)
 
 def detect_questions_llm(text):
     prompt = f"""
